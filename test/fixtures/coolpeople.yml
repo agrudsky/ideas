@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: MyString
+  location: MyString
+  imgurl: MyString
+  barpercent: MyString
+  desc: MyString
+
+two:
+  name: MyString
+  date: MyString
+  location: MyString
+  imgurl: MyString
+  barpercent: MyString
+  desc: MyString
