@@ -7,4 +7,19 @@ class ApplicationController < ActionController::Base
      @coolpeople = Coolpeople.find_by_id(params["id"])
     render 'show'
    end
+  
+  def new
+  end
+  
+  def create
+    g = Coolpeople.new
+    g.name = params['name']
+    g.date = params['date']
+    g.location = params['location']
+    g.imgurl = params['imgurl']
+    g.barpercent = params['barpercent']
+    g.desc = params['desc']
+    g.save
+    redirect_to '/userpage/#{ g.id }'
+  end
 end
