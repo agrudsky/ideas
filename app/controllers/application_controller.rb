@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
     render 'show'
    end
   
+  def showwm
+     @coolpeople = Coolpeople.find_by_id(params["id"])
+    render 'showwm'
+   end
+  
   def new
   end
   
@@ -36,7 +41,7 @@ class ApplicationController < ActionController::Base
     g.barpercent = params['barpercent']
     g.desc = params['desc']
     g.save
-    redirect_to "/userpage/#{ g.id }"
+    redirect_to "/userpage/#{ g.id }/wm"
     
   end
 end
