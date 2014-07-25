@@ -3,7 +3,7 @@
     <div class="row">
     
 <div>
-  <p style="float: left;"><img src=<%= @coolpeople.imgurl %> height="200px" width="250px" border="1px"></p>
+  <p style="float: left;"><img src=<%= @coolpeople.imgurl %> height="200px" width=auto border="1px"></p>
   <h3><center><strong><%= @coolpeople.name %></strong><span class="member"> <%= @coolpeople.date %></span></center></h3>
   <p><%= @coolpeople.desc %> </p>
     
@@ -12,6 +12,7 @@
          <h4>Location: <span class="location"><%= @coolpeople.location %></span></h4>
           <h4>Swag:</h4> </div>
        <div class="col-md-10">
+         
       <div class="col-md-2">     
 </div>   
   <div class="progress">
@@ -21,4 +22,7 @@
   </div>
   </div>
 </div>
+</div>
+<div class="links">
+  <a href="/userpage/<%= @coolpeople.id %>/edit">edit</a>
 </div>

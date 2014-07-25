@@ -29,14 +29,16 @@ img {
 p {
   margin:50px;
 }
-.descform {
-  width: 390px; 
-  height: 390px; 
-}
 .swagpercentform {
   width: 207px; 
   height: 26px; 
 }
 input {
    text-align:center;
+}
+.descform {
+   text-align:center;
+}
+.links {
+  text-align: center;
 }

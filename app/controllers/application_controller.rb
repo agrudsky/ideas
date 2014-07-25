@@ -20,6 +20,23 @@ class ApplicationController < ActionController::Base
     g.barpercent = params['barpercent']
     g.desc = params['desc']
     g.save
-    redirect_to '/userpage/#{ g.id }'
+    redirect_to "/userpage/#{ g.id }"
+  end
+  
+  def edit
+    @coolpeople = Coolpeople.find_by_id(params['id'])
+  end
+  
+  def update
+    g = Coolpeople.find_by_id(params['id'])
+    g.name = params['name']
+    g.date = params['date']
+    g.location = params['location']
+    g.imgurl = params['imgurl']
+    g.barpercent = params['barpercent']
+    g.desc = params['desc']
+    g.save
+    redirect_to "/userpage/#{ g.id }"
+    
   end
 end
