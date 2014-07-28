@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
    def show 
+    @cool = Coolpeople.all
      @coolpeople = Coolpeople.find_by_id(params["id"])
-    render 'show'
+     render 'show'
    end
   
   def showwm
@@ -52,8 +53,10 @@ class ApplicationController < ActionController::Base
   def destroy
     g = Coolpeople.find_by_id(params['id'])
     g.destroy
-    redirect_to "/userpage/#{ g.id }/delsure"
-    
+    redirect_to "/userpage"
   end
-    
+  
+  def index
+    @coolpeople = Coolpeople.all
+  end
 end

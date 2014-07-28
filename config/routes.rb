@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/update_user/:id' => 'application#update'
   get '/userpage/:id/delsure' => 'application#delsure'
   get '/userpage/:id/delete' => 'application#destroy'
+  get '/userpage' => 'application#index'
 end
