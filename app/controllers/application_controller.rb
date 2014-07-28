@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     render 'showwm'
    end
   
+  def delsure
+    @coolpeople = Coolpeople.find_by_id(params["id"])
+    render 'delsure'
+  end
+  
   def new
   end
   
@@ -42,6 +47,13 @@ class ApplicationController < ActionController::Base
     g.desc = params['desc']
     g.save
     redirect_to "/userpage/#{ g.id }/wm"
+  end
+  
+  def destroy
+    g = Coolpeople.find_by_id(params['id'])
+    g.destroy
+    redirect_to "/userpage/#{ g.id }/delsure"
     
   end
+    
 end

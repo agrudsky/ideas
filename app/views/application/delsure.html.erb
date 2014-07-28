@@ -1,3 +1,9 @@
+<center><div class="alert alert-danger" role="alert">Are you sure?
+  <a href="http://ruby-box-131007.usw1.nitrousbox.com/userpage/<%= @coolpeople.id %>/delete" class="alert-link">Yes</a> / 
+  <a href="http://ruby-box-131007.usw1.nitrousbox.com/userpage/<%= @coolpeople.id %>" class="alert-link">No</a>
+</div></center>
+
+
 <div class="container">
   <div class="column">
     <div class="row">
@@ -30,9 +36,7 @@
   <div class="btn-group">
     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Options <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu">
-      <li><a href="/userpage/<%= @coolpeople.id %>/edit">Edit</a>
-        <a href="/userpage/<%= @coolpeople.id %>/delsure">Delete</a>
-      </li>     
+      <li><a href="/userpage/<%= @coolpeople.id %>/edit">Edit</a></li>
     </ul>
   </div><!-- /btn-group -->
 </div>
