@@ -4,59 +4,55 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
    def show 
-    @cool = Coolpeople.all
-     @coolpeople = Coolpeople.find_by_id(params["id"])
+     @cool = Movie.all
+     @coolpeople = Movie.find_by_id(params["id"])
      render 'show'
    end
   
   def showwm
-     @coolpeople = Coolpeople.find_by_id(params["id"])
+    @coolpeople = Movie.find_by_id(params["id"])
+    @cool = Movie.all
     render 'showwm'
    end
   
   def delsure
-    @coolpeople = Coolpeople.find_by_id(params["id"])
+    @coolpeople = Movie.find_by_id(params["id"])
+    @cool = Movie.all
     render 'delsure'
   end
   
   def new
+    @cool = Movie.all
   end
   
   def create
-    g = Coolpeople.new
+    g = Movie.new
     g.name = params['name']
-    g.date = params['date']
-    g.location = params['location']
     g.imgurl = params['imgurl']
-    g.barpercent = params['barpercent']
-    g.desc = params['desc']
     g.save
-    redirect_to "/userpage/#{ g.id }"
+    redirect_to "/movie/#{ g.id }"
   end
   
   def edit
-    @coolpeople = Coolpeople.find_by_id(params['id'])
+    @coolpeople = Movie.find_by_id(params['id'])
+    @cool = Movie.all
   end
   
   def update
-    g = Coolpeople.find_by_id(params['id'])
+    g = Movie.find_by_id(params['id'])
     g.name = params['name']
-    g.date = params['date']
-    g.location = params['location']
     g.imgurl = params['imgurl']
-    g.barpercent = params['barpercent']
-    g.desc = params['desc']
     g.save
-    redirect_to "/userpage/#{ g.id }/wm"
+    redirect_to "/movie/#{ g.id }/wm"
   end
   
   def destroy
-    g = Coolpeople.find_by_id(params['id'])
+    g = Movie.find_by_id(params['id'])
     g.destroy
-    redirect_to "/userpage"
+    redirect_to "/movie"
   end
   
   def index
-    @coolpeople = Coolpeople.all
+    @cool = Movie.all
   end
 end
