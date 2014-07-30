@@ -4,55 +4,55 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
    def show 
-     @cool = Movie.all
-     @coolpeople = Movie.find_by_id(params["id"])
+     @cool = Idea.all
+     @coolpeople = Idea.find_by_id(params["id"])
      render 'show'
    end
   
   def showwm
-    @coolpeople = Movie.find_by_id(params["id"])
-    @cool = Movie.all
+    @coolpeople = Idea.find_by_id(params["id"])
+    @cool = Idea.all
     render 'showwm'
    end
   
   def delsure
-    @coolpeople = Movie.find_by_id(params["id"])
-    @cool = Movie.all
+    @coolpeople = Idea.find_by_id(params["id"])
+    @cool = Idea.all
     render 'delsure'
   end
   
   def new
-    @cool = Movie.all
+    @cool = Idea.all
   end
   
   def create
-    g = Movie.new
-    g.name = params['name']
-    g.imgurl = params['imgurl']
+    g = Idea.new
+    g.ideatitle = params['ideatitle']
+    g.idea = params['idea']
     g.save
-    redirect_to "/movie/#{ g.id }"
+    redirect_to "/idea/#{ g.id }"
   end
   
   def edit
-    @coolpeople = Movie.find_by_id(params['id'])
-    @cool = Movie.all
+    @coolpeople = Idea.find_by_id(params['id'])
+    @cool = Idea.all
   end
   
   def update
-    g = Movie.find_by_id(params['id'])
-    g.name = params['name']
-    g.imgurl = params['imgurl']
+    g = Idea.find_by_id(params['id'])
+    g.ideatitle = params['ideatitle']
+    g.idea = params['idea']
     g.save
-    redirect_to "/movie/#{ g.id }/wm"
+    redirect_to "/idea/#{ g.id }/wm"
   end
   
   def destroy
-    g = Movie.find_by_id(params['id'])
+    g = Idea.find_by_id(params['id'])
     g.destroy
-    redirect_to "/movie"
+    redirect_to "/ideas"
   end
   
   def index
-    @cool = Movie.all
+    @cool = Idea.all
   end
 end

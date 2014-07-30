@@ -9,8 +9,8 @@
     <div class="row">
     
 <div>
-  <p style="float: left;"><img src=<%= @coolpeople.imgurl %> height="600px" width=auto border="1px"></p>
-  <h3><center><strong><%= @coolpeople.name %></strong></center></h3><br>
+  <h3><center><strong><%= @coolpeople.ideatitle %></strong></center></h3><br>
+  <p><center><%= @coolpeople.idea %></center></p>
 </div>
     
        <div class="col-md-2">
@@ -27,8 +27,8 @@
   <div class="btn-group">
     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Options <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu">
-      <li><a href="/movie/<%= @coolpeople.id %>/edit">Edit</a>
-      <a href="/movie/<%= @coolpeople.id %>/delsure">Delete</a>
+      <li><a href="/idea/<%= @coolpeople.id %>/edit">Edit</a>
+      <a href="/idea/<%= @coolpeople.id %>/delsure">Delete</a>
      </li>
     </ul>
   </div><!-- /btn-group -->

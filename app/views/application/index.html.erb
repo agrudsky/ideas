@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset2">
-      <h1>Movies</h1>
+      <h1>All Ideas</h1>
 <ul>
 <% @cool.each do |coolpeople| %>
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset2">
         <li>
-          <img src=<%= coolpeople.imgurl %> height="100px" width=auto border="1px"> - 
-          <a href="/movie/<%= coolpeople.id %>">show</a> |
-          <a href="/movie/<%= coolpeople.id %>/edit">edit</a> |
-          <a href="/movie/<%= coolpeople.id %>/delsure">delete</a> 
+          <%= coolpeople.ideatitle %> - 
+          <a href="/idea/<%= coolpeople.id %>">show</a> |
+          <a href="/idea/<%= coolpeople.id %>/edit">edit</a> |
+          <a href="/idea/<%= coolpeople.id %>/delsure">delete</a> 
         </li>
     </div>
   </div>
